@@ -13,10 +13,22 @@ class MachinController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('machin/index.html.twig', 
+        return $this->render('machin/index.html.twig',
         [
             'controller_name' => 'MachinController',
-            ' number => 42'
+            'number' => 42
+        ]);
+    }
+
+    /**
+     * @Route("/machin/truc/{number}", name="machin/truc")
+     */
+    public function truc($number): Response
+    {
+        return $this->render('machin/index.html.twig',
+        [
+            'controller_name' => 'MachinController',
+            'number' => $number
         ]);
     }
 }
